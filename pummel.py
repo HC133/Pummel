@@ -49,7 +49,7 @@ else:
     out_file = str(out_file)
 print ("Number Of Proxies: %s" %(len(open(out_file).readlines())))
 time.sleep(0.3)
-multiple = int(input("Input the Multiple:"))
+multiple = int(input("Input the Multiple(1~100):"))
 
 acceptall = [
         "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Language: en-US,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\n",
