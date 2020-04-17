@@ -6,7 +6,7 @@
  | |   | |_| | | | | | | | | | | |  __/ |
  |_|    \__,_|_| |_| |_|_| |_| |_|\___|_| 
 ```
-![](https://img.shields.io/badge/Version-0.0.1-brightgreen.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg)
+![](https://img.shields.io/badge/Version-0.0.2-brightgreen.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
 Install
 ---
