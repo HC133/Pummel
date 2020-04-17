@@ -32,7 +32,7 @@ if port =="":
     port = 80
 else:
     port = int(port)
-th_num = str(input("Threads:"))
+th_num = str(input("Threads(default =300):"))
 if th_num == "":
     th_num = int(300)
 else:
