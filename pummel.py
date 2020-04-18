@@ -173,7 +173,7 @@ N = str(input("Do you need to download socks5 list ?(y/n):"))
 if N == 'y':
     f = open("socks5.txt", 'wb')
     try:
-        r = requests.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&country=all&timeout=1000")
+        r = requests.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&country=all)
         f.write(r.content)
     except:
         pass
@@ -269,7 +269,7 @@ def checking(lines,):
 		try:
 			s = socks.socksocket()
 			s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-			s.settimeout(1)
+			s.settimeout(10)
 			s.connect((str(ip), int(port)))
 			if port==443:
 				ctx = ssl.SSLContext()
