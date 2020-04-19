@@ -6,7 +6,7 @@
 ██║     ╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗███████╗    
 ╚═╝      ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝  
 ```
-![](https://img.shields.io/badge/Version-0.0.2-brightgreen.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg)
+![](https://img.shields.io/badge/Version-1.0.2-brightgreen.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
 Update:
 
