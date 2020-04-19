@@ -10,12 +10,13 @@
 
 Update:
 
-- [x] Socks5 Proxies Checker Added
+- [x] Socks5 Proxies Checker Bug Fixed
 
 Func:
 
 - [x] HTTP-Flooding 
 - [x] HTTPS-Flooding 
+- [x] Socks5 Proxies Checker
 
 Install
 ---
