@@ -193,7 +193,7 @@ def main():
         th_num = int(300)
     else:
         th_num = int(th_num)
-    N = str(input("Do you need to download socks5 list ?(y/n):"))
+    N = str(input("Download socks5 list ?(y/n):"))
     if N == '':
         N = "y"
     if N == 'y':
@@ -220,7 +220,7 @@ def main():
         proxies = open(out_file).readlines()
     print ("Number Of Proxies: %s" %(len(open(out_file).readlines())))
     time.sleep(0.3)
-    ans = str(input("Do u need to check the socks list?(y/n, defualt=y):"))
+    ans = str(input("Check the socks list?(y/n, defualt=y):"))
     if ans == "":
         ans = "y"
     if ans == "y":
