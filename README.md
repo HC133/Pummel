@@ -10,6 +10,7 @@
 
 Update:
 
+- [x] GET/HEAD Mode Added
 - [x] More User-friendly
 
 ![test](https://user-images.githubusercontent.com/63648976/79683896-e7c25c80-825f-11ea-9d31-09e473cb838c.gif)
