@@ -206,7 +206,6 @@ else :
     except :
         ms = float(ms)
 time.sleep(0.2)
-print("End of process")
 multiple = int(input("Input the Multiple(1~100):"))
 
 acceptall = [
