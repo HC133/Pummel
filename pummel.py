@@ -17,9 +17,9 @@ print('''\r\n
 ██║     ╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗███████╗    
 ╚═╝      ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝   
 ┌─────────────────────────────────────────────────────┐
-│ version 1.0.3                                       │
+│ version 1.0.4                                       │
 │                                                     │
-│          [!!!Socks Checker Bug Fixed!!!]            │
+│            [!!!More User-friendly UI!!!]            │
 │                                                     │
 │                               Code By HC the Chlous │
 ├─────────────────────────────────────────────────────┤
@@ -180,15 +180,18 @@ def main():
     global proxies
     global multiple
     ip = str(input("Address/Host:"))
-    page = str(input("Page (default =/):"))
+    if ip == "":
+        print("Wrong Input! Please Try Again!")
+        sys.exit(1)
+    page = str(input("Page (default=/):"))
     if page == "":
         page = "/"
-    port = str(input("Port (HTTPS =443):"))
+    port = str(input("Port (HTTPS=443):"))
     if port =="":
         port = 80
     else:
         port = int(port)
-    th_num = str(input("Threads(default =300):"))
+    th_num = str(input("Threads(default=300):"))
     if th_num == "":
         th_num = int(300)
     else:
@@ -214,10 +217,10 @@ def main():
         pass
     out_file = str(input("Enter Proxy File Path(socks5.txt):"))
     if out_file == '':
-        out_file = str("socks.txt")
+        out_file = str("socks5.txt")
     else:
         out_file = str(out_file)
-        proxies = open(out_file).readlines()
+    proxies = open(out_file).readlines()
     print ("Number Of Proxies: %s" %(len(open(out_file).readlines())))
     time.sleep(0.3)
     ans = str(input("Check the socks list?(y/n, defualt=y):"))
@@ -233,7 +236,11 @@ def main():
             except :
                 ms = float(ms)
         check_socks()
-    multiple = int(input("Input the Multiple(1~100):"))
+    multiple = str(input("Input the Multiple(default=100):"))
+    if multiple == "":
+        multiple = int(100)
+    else:
+        multiple = int(multiple)
 
 def run():
     get_host = "GET " + page + " HTTP/1.1\r\nHost: " + ip + "\r\n"
