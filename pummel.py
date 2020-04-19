@@ -17,7 +17,7 @@ print('''\r\n
 ██║     ╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗███████╗    
 ╚═╝      ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝   
 ┌─────────────────────────────────────────────────────┐
-│ version 1.0.4                                       │
+│ version 1.0.5                                       │
 │                                                     │
 │            [!!!More User-friendly UI!!!]            │
 │                                                     │
@@ -189,8 +189,11 @@ def main():
     port = str(input("Port (HTTPS=443):"))
     if port =="":
         port = 80
+        print("Port 80 Has Been Selected")
     else:
         port = int(port)
+    if port == 443:
+        print("Port 443 Has Been Selected")        
     th_num = str(input("Threads(default=300):"))
     if th_num == "":
         th_num = int(300)
