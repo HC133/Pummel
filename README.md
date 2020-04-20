@@ -20,6 +20,7 @@ Func:
 
 - [x] HTTP-Flooding 
 - [x] HTTPS-Flooding 
+- [x] Semiauto-Get Socks5 Proxies
 - [x] Socks5 Proxies Checker
 
 Install
