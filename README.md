@@ -6,12 +6,11 @@
 ██║     ╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗███████╗    
 ╚═╝      ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝  
 ```
-![](https://img.shields.io/badge/Version-1.1.6-brightgreen.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg)
+![](https://img.shields.io/badge/Version-1.1.7-brightgreen.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
 Update:
 
-- [x] GET/HEAD Mode Select Bug Fixed
-- [x] Small UI Update
+- [x] Small Bug Fixed
 
 Func:
 
