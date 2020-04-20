@@ -6,15 +6,12 @@
 ██║     ╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗███████╗    
 ╚═╝      ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝  
 ```
-![](https://img.shields.io/badge/Version-1.1.4-brightgreen.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg)
+![](https://img.shields.io/badge/Version-1.1.6-brightgreen.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
 Update:
 
-- [x] GET/HEAD Mode Added
-- [x] More User-friendly
-
-![test](https://user-images.githubusercontent.com/63648976/79683896-e7c25c80-825f-11ea-9d31-09e473cb838c.gif)
-
+- [x] GET/HEAD Mode Select Bug Fixed
+- [x] Small UI Update
 
 Func:
 
@@ -22,6 +19,10 @@ Func:
 - [x] HTTPS-Flooding 
 - [x] Semiauto-Get Socks5 Proxies
 - [x] Socks5 Proxies Checker
+- [x] GET/HEAD Mode
+- [x] User-friendly
+
+![test](https://user-images.githubusercontent.com/63648976/79683896-e7c25c80-825f-11ea-9d31-09e473cb838c.gif)
 
 Install
 ---
