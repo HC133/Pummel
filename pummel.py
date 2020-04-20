@@ -17,9 +17,10 @@ print('''\r\n
 ██║     ╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗███████╗    
 ╚═╝      ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝   
 ┌─────────────────────────────────────────────────────┐
-│ version 1.1.4                                       │
+│ version 1.1.6                                       │
 │                                                     │
-│            [!!!GET/HEAD Mode Update!!!]             │
+│           [!!!Mode Select Bug Fixed!!!]             │
+│           [!!!   Small UI Update   !!!]             │                          
 │                                                     │
 │                               Code By HC the Chlous │
 ├─────────────────────────────────────────────────────┤
@@ -182,9 +183,13 @@ def main():
     global mode
     mode = str(input("Mode You Want To Choose (get/head):"))
     if mode == "":
-        mode = "GET"
+        mode = "get"
     else:
         mode = str(mode)
+    if mode == "get" or "GET":
+        print("GET Mode Selected")
+    elif mode == "head" or "HEAD":
+        print("HEAD Mode Selected")
     ip = str(input("Address/Host:"))
     if ip == "":
         print("Wrong Input! Please Try Again!")
@@ -205,7 +210,7 @@ def main():
         th_num = int(300)
     else:
         th_num = int(th_num)
-    if mode == "get" and "GET":
+    if mode == "get" or "GET":
         N = str(input("Download socks5 list ?(y/n):"))
         if N == '':
             N = "y"
