@@ -254,7 +254,7 @@ def main():
         if N == 'y':
             f = open("socks5.txt", 'wb')
             try:
-                r = requests.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&country=all&timeout=1000")
+                r = requests.get("https://api.proxyscrape.com/?request=displayproxies&proxytype=socks5&country=all")
                 f.write(r.content)
             except:
                 pass
