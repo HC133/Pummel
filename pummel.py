@@ -186,9 +186,9 @@ def main():
         mode = "get"
     else:
         mode = str(mode)
-    if mode == "get" or "GET":
+    if mode == "get" or mode == "GET":
         print("GET Mode Selected")
-    elif mode == "head" or "HEAD":
+    elif mode == "head" or mode == "HEAD":
         print("HEAD Mode Selected")
     ip = str(input("Address/Host:"))
     if ip == "":
