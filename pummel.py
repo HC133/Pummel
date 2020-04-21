@@ -8,6 +8,7 @@ import sys
 import requests 
 import socks
 import ssl
+#Stop Updating
 
 print('''\r\n
 ██████╗ ██╗   ██╗███╗   ███╗███╗   ███╗███████╗██╗         
