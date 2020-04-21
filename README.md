@@ -10,7 +10,7 @@
 
 Update:
 
-- [x] Small Bug Fixed
+I will be stopped updating this cc due to learning
 
 Func:
 
