@@ -19,11 +19,12 @@ print('''\r\n
 ┌─────────────────────────────────────────────────────┐
 │ version 1.2.7                                       │
 │                                                     │
-│           [!!!HTTPS-Flood Imporved!!!]              │                      
+│            [!!!HTTPS-Flood Imporved!!!]             │                      
 │                                                     │
 │                               Code By HC the Chlous │
 ├─────────────────────────────────────────────────────┤
-│       Github: https://github.com/HC133/Pummel       │
+│       Github: https://github.com/HC133/Pummel	      │
+│           [!]DO NOT ATTACK GOV WEBSITE[!]           │
 └─────────────────────────────────────────────────────┘\r\n''')
 
 useragents=["Mozilla/5.0 (Android; Linux armv7l; rv:10.0.1) Gecko/20100101 Firefox/10.0.1 Fennec/10.0.1",
