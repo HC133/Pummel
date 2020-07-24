@@ -17,9 +17,9 @@ print('''\r\n
 ██║     ╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗███████╗    
 ╚═╝      ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝   
 ┌─────────────────────────────────────────────────────┐
-│ version 1.2.7                                       │
+│ version 1.2.8                                       │
 │                                                     │
-│            [!!!HTTPS-Flood Imporved!!!]             │                      
+│          [!!!Prevent Illegal CC-Attack!!!]          │                      
 │                                                     │
 │                               Code By HC the Chlous │
 ├─────────────────────────────────────────────────────┤
@@ -190,6 +190,14 @@ def clone():
         f.close()
     print("Socks Downloaded Sucessful !")
 
+def prevent():
+    if '192.168' in ip or '127.0' in ip or '172.16' in ip or 'localhost' in ip :
+        print("Error Ip range!")
+        exit()
+    if 'gov' in ip or 'edu' in ip:
+        print("Can't attack .gov or .edu website!")
+        exit()
+
 def main():
     global ip
     global port
@@ -208,9 +216,10 @@ def main():
     elif mode == "head" or mode == "HEAD":
         print("HEAD Mode Selected")
     ip = str(input("Address/Host:"))
+    prevent()
     if ip == "":
         print("Wrong Input! Please Try Again!")
-        return main()
+        exit()
     page = str(input("Page (default=/):"))
     if page == "":
         page = "/"
