@@ -6,10 +6,10 @@
 ██║     ╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗███████╗    
 ╚═╝      ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝  
 ```
-![](https://img.shields.io/badge/Version-1.2.7-brightgreen.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg)
+![](https://img.shields.io/badge/Version-1.2.8-brightgreen.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
 Update:
-- [x] HTTPS-Flooding Improved
+- [x] Prevent Attacking .edu or .gov website
 
 Func:
 
