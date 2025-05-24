@@ -5,6 +5,8 @@
 ██╔═══╝ ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══╝  ██║         
 ██║     ╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║███████╗███████╗    
 ╚═╝      ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝  
+
+This tool is intended strictly for authorized use in lab environments, on systems you own or control, or with explicit written permission from the target’s owner. Unauthorized use against any public, commercial, government, or educational websites is illegal and unethical. The creator does not endorse or take responsibility for any misuse of this software. Please use responsibly and within the bounds of the law.
 ```
 ![](https://img.shields.io/badge/Version-1.2.8-brightgreen.svg) ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
